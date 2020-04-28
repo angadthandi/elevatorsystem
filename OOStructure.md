@@ -21,6 +21,8 @@ http://www.web-feats.com/classes/dj/lessons/uml/elevator.htm
 
 ## IElevator Interface
  #### Methods:
+ - int getTotalFloors()
+ - int getCurrentFloor()
  - moveUp(gotoFloor int)
  - moveDown(gotoFloor int)
  - stop()
@@ -29,9 +31,12 @@ http://www.web-feats.com/classes/dj/lessons/uml/elevator.htm
  #### Attributes:
  - currentFloor int
  #### Methods:
+ - int getTotalFloors()
+ - int getCurrentFloor()
  - moveUp(gotoFloor int)
  - moveDown(gotoFloor int)
  - stop()
+ - Elevator(totalFloors int) // contructor - takes in total number of floors
 
 ---
 
@@ -47,6 +52,9 @@ http://www.web-feats.com/classes/dj/lessons/uml/elevator.htm
  #### Methods:
  - enterRequest(gotoFloor int)
  - processRequest()
+ - RequestHandler(e IElevator, d IDoor) // contructor - takes in IElevator, IDoor interface
+                            //                  instance and initializes ButtonMap equal to
+                            //                  number of floors passed to IElevator
 
 ---
 
