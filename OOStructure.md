@@ -12,7 +12,7 @@ http://www.web-feats.com/classes/dj/lessons/uml/elevator.htm
 
 ## Door Class (SINGLETON)
  #### Attributes:
- - status bool
+ - isOpen bool
  #### Methods:
  - open()
  - close()
@@ -43,6 +43,7 @@ http://www.web-feats.com/classes/dj/lessons/uml/elevator.htm
 ## RequestHandler Class implements IRequestHandler
  #### Attributes:
  - requestQueue []int
+ - ButtonMap HashMap<Integer, Button>
  #### Methods:
  - enterRequest(gotoFloor int)
  - processRequest()
