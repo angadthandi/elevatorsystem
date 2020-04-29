@@ -3,6 +3,9 @@
 ##### Reference
 http://www.web-feats.com/classes/dj/lessons/uml/elevator.htm
 
+##### Implement something like this?
+https://leetcode.com/discuss/interview-question/object-oriented-design/124927/Write-elevator-program-using-event-driven-programming/123416
+
 ---
 
 ## IDoor Interface
