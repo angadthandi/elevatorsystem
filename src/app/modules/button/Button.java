@@ -2,6 +2,8 @@ package app.modules.button;
 
 import java.util.HashMap;
 
+import app.modules.requesthandler.IRequestHandler;
+
 public class Button implements IButton {
 
     private boolean isIlluminated = false;
@@ -9,7 +11,7 @@ public class Button implements IButton {
     public static HashMap<Integer, Button> createButtons(int totalFloors) {
         HashMap<Integer, Button> ButtonMap = new HashMap<Integer, Button>();
 
-        for (int i = 0; i <= totalFloors; i++) {
+        for (int i = 1; i <= totalFloors; i++) {
             Button b = new Button();
 
             ButtonMap.put(i, b);
@@ -18,8 +20,8 @@ public class Button implements IButton {
         return ButtonMap;
     }
 
-    public void press(int gotoFloor) {
-
+    public void press(IRequestHandler r, int gotoFloor) {
+        r.enterRequest(gotoFloor);
     }
 
     public void illuminate() {

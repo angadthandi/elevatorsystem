@@ -43,14 +43,15 @@ http://www.web-feats.com/classes/dj/lessons/uml/elevator.htm
 
 ## IRequestHandler Interface
  #### Methods:
+ - ArrayList<Integer> getElevatorFloors()
  - enterRequest(gotoFloor int)
- - processRequest()
 
 ## RequestHandler Class implements IRequestHandler
  #### Attributes:
  - requestQueue []int
  - ButtonMap HashMap<Integer, Button>
  #### Methods:
+ - ArrayList<Integer> getElevatorFloors()
  - enterRequest(gotoFloor int)
  - processRequest()
  - RequestHandler(e IElevator, d IDoor) \
@@ -62,13 +63,13 @@ http://www.web-feats.com/classes/dj/lessons/uml/elevator.htm
 
 ## IButton Interface
  #### Methods:
- - press(gotoFloor int)
+ - press(r IRequestHandler, gotoFloor int)
  - illuminate()
  - illuminateCancel()
 
 ## Button Class implements IButton
  #### Methods:
- - press(gotoFloor int)
+ - press(r IRequestHandler, gotoFloor int)
  - illuminate()
  - illuminateCancel()
 

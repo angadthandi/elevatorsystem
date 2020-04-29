@@ -6,8 +6,8 @@ public class Elevator implements IElevator {
     private int totalFloors = 0;
     private int currentFloor = 0;
 
-    private Elevator(int totalFloors) {
-
+    private Elevator(int totalElevatorFloors) {
+        totalFloors = totalElevatorFloors;
     }
 
     public static Elevator getInstance(int totalFloors) {

@@ -1,5 +1,6 @@
 package app.modules.requesthandler;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -22,9 +23,20 @@ public class RequestHandler implements IRequestHandler {
         ButtonMap = Button.createButtons(e.getTotalFloors());
     }
 
+    public ArrayList<Integer> getElevatorFloors() {
+        ArrayList<Integer> buttons = new ArrayList<Integer>();
+
+        for (HashMap.Entry mapElement : ButtonMap.entrySet()) { 
+            int key = (int)mapElement.getKey();
+            
+            buttons.add(key);
+        }
+
+        return buttons;
+    }
+
     public void enterRequest(int gotoFloor) {
         Button b = ButtonMap.get(gotoFloor);
-        b.press(gotoFloor);
         b.illuminate();
 
         requestQueue.offer(gotoFloor);
@@ -32,7 +44,7 @@ public class RequestHandler implements IRequestHandler {
         processRequest();
     }
 
-    public void processRequest() {
+    private void processRequest() {
         while (!requestQueue.isEmpty()) {
             int floor = requestQueue.poll();
 
