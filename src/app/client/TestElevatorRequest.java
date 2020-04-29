@@ -49,6 +49,9 @@ public class TestElevatorRequest {
             button.press(requestHandler, gotoFloor);
 
             int currFloor = elevator.getCurrentFloor();
+            System.out.printf(
+                "gotoFloor: %d; currFloor: %d\n", gotoFloor, currFloor
+            );
 
             if (gotoFloor != currFloor) {
                 System.out.printf(
